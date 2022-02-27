@@ -1,0 +1,5 @@
+{
+  "name": "azure",
+  "source": "assets/themes/Azure-ttk-theme/azure.tcl",
+  "styles": ["light", "dark"]
+}
