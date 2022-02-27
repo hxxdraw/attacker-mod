@@ -57,6 +57,6 @@ class LoadingScreen(ttk.Frame):
             self.loading_progressbar['value'] += 100 / TROLL_FACE_ANIMATION_FRAMES_COUNT
             self.loading_progressbar.update()
 
-        # self.parent.update_screen()
+        self.parent.update_screen(MainScreen)
 
 

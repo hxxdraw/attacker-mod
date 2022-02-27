@@ -26,6 +26,28 @@ class MainScreen(ttk.Frame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
 
+        # Creating widgets
+        self.left_frame = LeftPartContainer(self, **loader.load_json(CARD_FRAME_CFG_FILE))
+        self.right_frame = RightPartContainer(self, **loader.load_json(CARD_FRAME_CFG_FILE))
+
+        # Widgets positioning
+        self.left_frame.grid(
+            row=0,
+            column=0,
+            sticky=tk.NSEW,
+            rowspan=2,
+            padx=10,
+            pady=10
+        )
+        self.right_frame.grid(
+            row=0,
+            column=1,
+            sticky=tk.NSEW,
+            rowspan=2,
+            padx=10,
+            pady=10
+        )
+
 
 class LeftPartContainer(ttk.Frame):
 
@@ -37,6 +59,19 @@ class LeftPartContainer(ttk.Frame):
 
     def __init__(self, *args, **kwargs):
         super(LeftPartContainer, self).__init__(*args, **kwargs)
+
+        # Creating widgets
+        self.status_lbl = ttk.Label(self, **loader.load_json(STATUS_LABEL_CFG_FILE))
+
+        # Widgets positioning
+        self.status_lbl.grid(
+            row=0,
+            column=0,
+            columnspan=2,
+            padx=10,
+            pady=10,
+            sticky=tk.NSEW
+        )
 
 
 class RightPartContainer(ttk.Frame):
