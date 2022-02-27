@@ -26,7 +26,7 @@ class Application(tk.Tk):
         self.resizable(*app_win_resizable)  # is resizable?
         self.overrideredirect(app_win_borderless)   # window borderless mode
         self.wm_attributes(TK_ATTRIBUTE_TOPMOST, app_win_topmost)   # topmost rendering
-        self.use_custom_theme(THEMES_DATA_FILES_LIST[0], 1)
+        self.use_custom_theme(THEMES_DATA_FILES_LIST[1], 1)
         self.update_screen(LoadingScreen)
 
     def get_xy_center_move(self):

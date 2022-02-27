@@ -9,11 +9,12 @@ THEMES_DATA_FILES_FOLDER = os.path.join(ASSETS_FOLDER, "themes-data")
 IMAGES_FOLDER = os.path.join(ASSETS_FOLDER, "img")
 COMPONENTS_FOLDER = os.path.join(ASSETS_FOLDER, "components")
 
-# Assets (images)
+# Assets (files)
 TROLL_FACE_ANIMATION_GIF = os.path.join(IMAGES_FOLDER, "troll.gif")
 NINJA_LOGO_PNG = os.path.join(IMAGES_FOLDER, "loading-logo.png")
 MOTTO_PNG = os.path.join(IMAGES_FOLDER, "motto.png")
 BACKGROUND_JPG = os.path.join(IMAGES_FOLDER, "background.jpg")
+TARGETS_TXT = "targets.txt"
 
 # Assets (themes)
 THEMES_DATA_FILES_LIST: list = [

@@ -1,8 +1,3 @@
-import tkinter as tk
-from tkinter import ttk
-
-import loader
-from settings import *
 from .main_screen import *
 
 

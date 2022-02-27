@@ -27,8 +27,15 @@ class MainScreen(ttk.Frame):
         self.grid_columnconfigure(1, weight=1)
 
         # Creating widgets
-        self.left_frame = LeftPartContainer(self, **loader.load_json(CARD_FRAME_CFG_FILE))
-        self.right_frame = RightPartContainer(self, **loader.load_json(CARD_FRAME_CFG_FILE))
+        self.left_frame = LeftPartContainer(
+            self,
+            **loader.load_json(CARD_FRAME_CFG_FILE)
+        )
+
+        self.right_frame = RightPartContainer(
+            self,
+            **loader.load_json(CARD_FRAME_CFG_FILE)
+        )
 
         # Widgets positioning
         self.left_frame.grid(
@@ -60,8 +67,21 @@ class LeftPartContainer(ttk.Frame):
     def __init__(self, *args, **kwargs):
         super(LeftPartContainer, self).__init__(*args, **kwargs)
 
+        # Grid configuration
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+
         # Creating widgets
-        self.status_lbl = ttk.Label(self, **loader.load_json(STATUS_LABEL_CFG_FILE))
+        self.status_lbl = ttk.Label(
+            self,
+            **loader.load_json(STATUS_LABEL_CFG_FILE)
+        )
+
+        self.targets_menu = ttk.OptionMenu(
+            self,
+            tk.StringVar(),
+            *ATTACK_TARGETS_LIST
+        )
 
         # Widgets positioning
         self.status_lbl.grid(
@@ -71,6 +91,15 @@ class LeftPartContainer(ttk.Frame):
             padx=10,
             pady=10,
             sticky=tk.NSEW
+        )
+
+        self.targets_menu.grid(
+            row=1,
+            column=0,
+            sticky=tk.NSEW,
+            padx=10,
+            pady=10,
+            columnspan=2
         )
 
 
@@ -99,8 +128,15 @@ class _BtnSrcContainer(ttk.Frame):
         super(_BtnSrcContainer, self).__init__(*args, **kwargs)
 
         # Creating widgets
-        self.original_btn = ttk.Button(self, **loader.load_json(ORIGINAL_GITHUB_BUTTON_CFG_FILE))
-        self.mod_btn = ttk.Button(self, **loader.load_json(MODIFICATION_GITHUB_BUTTON_CFG_FILE))
+        self.original_btn = ttk.Button(
+            self,
+            **loader.load_json(ORIGINAL_GITHUB_BUTTON_CFG_FILE)
+        )
+
+        self.mod_btn = ttk.Button(
+            self,
+            **loader.load_json(MODIFICATION_GITHUB_BUTTON_CFG_FILE)
+        )
 
         # Widgets positioning
         self.original_btn.pack(
@@ -113,5 +149,4 @@ class _BtnSrcContainer(ttk.Frame):
             padx=10,
             pady=10
         )
-
 
